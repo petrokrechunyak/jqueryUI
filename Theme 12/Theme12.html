@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Theme 12</title>
+    <link rel="stylesheet" href="../JQuery/css/theme-style.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css"/>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script src="../JQuery/js/12.js"></script>
+    <script src="../JQuery/js/11.js"></script>
+    <script src="js/script.js"></script>
+</head>
+<body>
+<style>
+    #motoSelect-button:nth-child(4) {
+        display: none;
+        padding: 100px;
+    }
+</style>
+<!-- start-work-->
+<div class="work">
+    <div class="container">
+        <div class="head text-center work-head">
+            <h3><span> </span> Розрахунок вартості прокату мотоциклів:</h3>
+        </div>
+        <!-- form -->
+        <div class="col-md-12">
+            <form id="my_form">
+                <div id="bigform">
+                    <fieldset>
+                        <!-- right-form -->
+                        <div id="div_form_1">
+                            <fieldset id="innerfieldset">
+                                <legend>Додаткові опції </legend>
+                                <p><strong>Чи потрібні аксесуари?</strong></p>
+                                <div id="format">
+                                    <input type="checkbox" value="sh" name="dop_oprions" id="shlem" />
+                                    <label for="shlem">Шолом</label>
+                                    <input type="checkbox" value="bag" name="dop_oprions" id="bag" />
+                                    <label for="bag">Багажник</label>
+                                    <input type="checkbox" value="od" name="dop_oprions" id="od" />
+                                    <label for="od">Мото-одяг</label>
+                                </div>
+                                <br>
+                                <p><strong>Чи потрібна страховка?</strong></p>
+                                <div id="radio">
+                                    <input type="radio" id="inch_yes" value="yes" name="inch" />
+                                    <label for="inch">Так</label>
+                                    <input type="radio" id="inch_no" value="no" name="inch" />
+                                    <label for="inch">Ні</label>
+                                </div>
+                                <div class="tests">
+                                    <p><strong>Ви маєте посвідчення водія категорії А?
+                                    </strong></p>
+                                    <div id="A">
+                                        <input type="radio" id="Ayes" value="yes" name="category"/>
+                                        <label for="Ayes">Так</label>
+                                        <input type="radio" id="Ano" value="no" name="category"/>
+                                        <label for="Ano">Ні</label>
+                                    </div>
+                                    <p><strong>Який у Вас досвід водіння мотоцикла (якщо є)?
+                                    </strong></p>
+                                    <div id="B">
+                                        <input type="radio" id="Byes" value="yes" name="exp"/>
+                                        <label for="Byes">Так</label>
+                                        <input type="radio" id="Bno" value="no" name="exp"/>
+                                        <label for="Bno">Ні</label>
+                                    </div>
+                                    <p><strong>Ви їздили на швидкостях більше 200 км/год?
+                                    </strong></p>
+                                    <div id="C">
+                                        <input type="radio" id="Cyes" value="yes" name="race"/>
+                                        <label for="Cyes">Так</label>
+                                        <input type="radio" id="Cno" value="no" name="race"/>
+                                        <label for="Cno">Ні</label>
+                                    </div>
+                                    <p><strong>У вас є сім'я?</strong></p>
+                                    <div id="D">
+                                        <input type="radio" id="Dyes" value="yes" name="family"/>
+                                        <label for="Dyes">Так</label>
+                                        <input type="radio" id="Dno" value="no" name="family"/>
+                                        <label for="Dno">Ні</label>
+                                    </div>
+                                    <p><strong>Ви палите?</strong></p>
+                                    <div id="E">
+                                        <input type="radio" id="Eyes" value="yes" name="smoking"/>
+                                        <label for="Eyes">Так</label>
+                                        <input type="radio" id="Eno" value="no" name="smoking"/>
+                                        <label for="Eno">Ні</label>
+                                    </div>
+                                </div>
+                                <p id="answers-result"><strong>Дано відповідей <span></span></strong></p>
+                                <div id="progressbar"></div>
+                            </fieldset>
+                            <a id="clear-form">Очистити форму</a>
+                            <input type="submit" value="Відправити запит"
+                                   class="ui-button ui-widget ui-corner-all" id="my_button" />
+                        </div>
+                        <!-- left-form -->
+                        <div id="div_form_2">
+                            <span>Модель:</span>
+                            <select name="moto" size="1" id="motoSelect">
+                                <option value="1" data-class="harley">Харлей Девідсон (100$ в день)</option>
+                                <option value="2" data-class="crossmoto">Кросовий мотоцикл (40$ в день)</option>
+                                <option value="3" data-class="speedmoto">Гоночний мотоцикл (150$ в день)
+                                </option>
+                                <option value="4" data-class="konceptmoto">Концептуальний мотоцикл (340$ в день)
+                                </option>
+                            </select>
+<!--                            <span>Днів:</span>-->
+<!--                            <select name="days" size="1" id="daysSelect">-->
+<!--                                <option value="1">1</option>-->
+<!--                                <option value="2">2</option>-->
+<!--                            </select>-->
+                            <br>
+                            <h3>Кількість товару:</h3>
+                            <div id="slider">
+                                <div id="custom-handle" class="ui-slider-handle"></div>
+                            </div>
+                            <br>
+                            <div class="demo">
+                                <p>
+                                    <label for="amount">Скільки плануєте проїхати? Відстань:</label>
+                                    <input type="text" id="amount" style="border:0; color:#000000; background-color:
+										#E7E7F0;" />
+                                </p>
+                                <div id="slider-range"></div>
+                            </div>
+                            <div class="ui-widget" style="margin-bottom: 10px;">
+                                <label for="region">Виберіть область: </label>
+                                <input id="region">
+                            </div>
+
+                            <strong>Від: </strong>
+                            <input type="text" name="form" id="from", class="datepicker" size="12">
+                            <strong>До:</strong>
+                            <input type="text" name="to" id="to", class="datepicker" size="12">
+                            <p><strong>Ваші побажання:</strong></p>
+                            <textarea cols="45" rows="2" id="textarea"></textarea>
+                        </div>
+                    </fieldset>
+                </div>
+            </form>
+        </div>
+        <!-- end-form -->
+    </div>
+</div>
+
+
+</body>
+</html>

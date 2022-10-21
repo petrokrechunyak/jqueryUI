@@ -1,0 +1,43 @@
+#sortable {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#sortable li {
+    margin: 5px;
+    padding: 10px;
+    width: 100%;
+}
+
+.ui-state-highlight {
+    height: 1.5em;
+    line-height: 1.2em;
+}
+
+#selectable li:hover {
+   /* background: rgb(225, 207, 229);*/
+}
+
+#selectable .ui-selected {
+    background: green;
+    color: white;
+}
+
+#selectable {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#selectable li {
+    margin: 3px;
+    padding: 3px;
+    float: left;
+    width: 230px;
+    height: 158px;
+    font-size: 4em;
+    text-align: center;
+}
+
+А

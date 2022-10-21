@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Theme 13</title>
+  <link rel="stylesheet" href="../JQuery/css/theme-style.css" type="text/css">
+  <link rel="stylesheet" href="css/style.css" type="text/css">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css" type="text/css"/>
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  <script src="../JQuery/js/12.js"></script>
+  <script src="../JQuery/js/11.js"></script>
+  <script src="js/script.js"></script>
+</head>
+<body>
+<style>
+  #motoSelect-button:nth-child(4) {
+    display: none;
+    padding: 100px;
+  }
+</style>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h2 class="text-center">Види мотоциклів</h2>
+      <div id="tabs">
+        <ul>
+          <li><a href="#tabs-1">Туристичні</a></li>
+          <li><a href="#tabs-2">Міські</a></li>
+          <li><a href="#tabs-3">Кросові</a></li>
+          <li><a href="#tabs-4">Гоночні</a></li>
+        </ul>
+        <div id="tabs-1">
+          <p>
+            Якщо дороги нормальні - ніяких обмежень немає. Якщо плануються польові -
+            раціональніше брати мотоцикл, який має хоч якісь позашляхові якості, або ж не
+            розраховувати на швидке пересування. Щоб їхати по грунтовці вам потрібно робити
+            це акуратно і повільно.
+          </p>
+          <ul>
+            <li>Honda</li>
+            <li>Yamaha</li>
+            <li>Harley-Davidson</li>
+            <li>BMW</li>
+            <li>Triumph</li>
+          </ul>
+        </div>
+        <div id="tabs-2">
+          <p>
+            Він повинен мати:
+            - невеликі габарити (вузький мотоцикл краще обходить затори, більш маневрений і
+            легше управляється в міському трафіку);
+            - середню потужність (супербайк з турбіною не потрібен, максимум - розігнатися
+            від світлофора до світлофора і на будь-якій передачі мати можливість обігнати
+            машини в потоці);
+            - обсяг бензобака не критичний (у місті заправок багато, тому паливо не стане
+            проблемою);
+            - невелика вага (щоб легше було маневрувати в потоці);
+            - відсутність або мінімальна кількість пластику, вітрозахисту (за великим рахунком
+            в місті це не потрібно, залишимо цю фішку туристам). Крім того, при падіннях, які
+            частіше бувають в місті ніж на трасі, падати в обвісі в рази дорожче;
+            - доступну середньому споживачеві ціну.
+          </p>
+          <ul>
+            <li>Harley-Davidson</li>
+            <li>Suzuki</li>
+            <li>Honda</li>
+            <li>Derbi</li>
+          </ul>
+
+        </div>
+        <div id="tabs-3">
+          <p>
+            Кросові мотоцикли не реєструються в органах дорожньої поліції, так як не
+            сертифіковані для пересування по дорогах загального користування і не можуть
+            мати технічний паспорт і номерний знак. Для управління кросовим мотоциклом не
+            потрібно водійське посвідчення, так як він є спортивним інвентарем.
+          </p>
+          <ul>
+            <li>KTM</li>
+            <li>Yamaha</li>
+            <li>BMW</li>
+            <li>Honda</li>
+            <li>Kawasaki</li>
+          </ul>
+        </div>
+        <div id="tabs-4">
+          <p>
+            Призначені для участі в спортивних змагання (гонках). За більш ніж столітню
+            історію мотоцикли зазнали великі зміни, починаючи від звичайних пристосованих
+            для участі в змаганнях, до спеціалізованих, створених для конкретного виду
+
+            змагань, таких як шосейно-кільцеві гонки, супермото, мотокрос, спідвей, гонки по
+            льоду.
+          </p>
+          <ul>
+            <li>Ducati</li>
+            <li>Aprilia</li>
+            <li>Yamaha</li>
+            <li>Kawasaki</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- start-work-->
+<div class="work">
+  <div class="container">
+    <div class="head text-center work-head">
+      <h3><span> </span> Розрахунок вартості прокату мотоциклів:</h3>
+    </div>
+    <!-- form -->
+    <div class="col-md-12">
+      <form id="my_form">
+        <div id="bigform">
+          <fieldset>
+            <!-- right-form -->
+            <div id="div_form_1">
+              <fieldset id="innerfieldset">
+                <legend>Додаткові опції </legend>
+                <p><strong>Чи потрібні аксесуари?</strong></p>
+                <div id="format">
+                  <input type="checkbox" value="sh" name="dop_oprions" id="shlem" />
+                  <label for="shlem">Шолом</label>
+                  <input type="checkbox" value="bag" name="dop_oprions" id="bag" />
+                  <label for="bag">Багажник</label>
+                  <input type="checkbox" value="od" name="dop_oprions" id="od" />
+                  <label for="od">Мото-одяг</label>
+                </div>
+                <br>
+                <p><strong>Чи потрібна страховка?</strong></p>
+                <div id="radio">
+                  <input type="radio" id="inch_yes" value="yes" name="str" />
+                  <label for="inch_yes">Так</label>
+                  <input type="radio" id="inch_no" value="no" name="str" />
+                  <label for="inch_no">Ні</label>
+                </div>
+                <div class="tests">
+                  <p><strong>Ви маєте посвідчення водія категорії А?
+                  </strong></p>
+                  <div id="A">
+                    <input type="radio" id="Ayes" value="yes" name="category"/>
+                    <label for="Ayes">Так</label>
+                    <input type="radio" id="Ano" value="no" name="category"/>
+                    <label for="Ano">Ні</label>
+                  </div>
+                  <p><strong>Який у Вас досвід водіння мотоцикла (якщо є)?
+                  </strong></p>
+                  <div id="B">
+                    <input type="radio" id="Byes" value="yes" name="exp"/>
+                    <label for="Byes">Так</label>
+                    <input type="radio" id="Bno" value="no" name="exp"/>
+                    <label for="Bno">Ні</label>
+                  </div>
+                  <p><strong>Ви їздили на швидкостях більше 200 км/год?
+                  </strong></p>
+                  <div id="C">
+                    <input type="radio" id="Cyes" value="yes" name="race"/>
+                    <label for="Cyes">Так</label>
+                    <input type="radio" id="Cno" value="no" name="race"/>
+                    <label for="Cno">Ні</label>
+                  </div>
+                  <p><strong>У вас є сім'я?</strong></p>
+                  <div id="D">
+                    <input type="radio" id="Dyes" value="yes" name="family"/>
+                    <label for="Dyes">Так</label>
+                    <input type="radio" id="Dno" value="no" name="family"/>
+                    <label for="Dno">Ні</label>
+                  </div>
+                  <p><strong>Ви палите?</strong></p>
+                  <div id="E">
+                    <input type="radio" id="Eyes" value="yes" name="smoking"/>
+                    <label for="Eyes">Так</label>
+                    <input type="radio" id="Eno" value="no" name="smoking"/>
+                    <label for="Eno">Ні</label>
+                  </div>
+                </div>
+                <p id="answers-result"><strong>Дано відповідей <span></span></strong></p>
+                <div id="progressbar"></div>
+              </fieldset>
+              <a id="clear-form">Очистити форму</a>
+              <input type="button" value="Відправити запит"
+                     class="ui-button ui-widget ui-corner-all" id="my_button" />
+            </div>
+            <!-- left-form -->
+            <div id="div_form_2">
+              <span>Модель:</span>
+              <select name="moto" size="1" id="motoSelect">
+                <option value="1" data-class="harley">Харлей Девідсон (100$ в день)</option>
+                <option value="2" data-class="crossmoto">Кросовий мотоцикл (40$ в день)</option>
+                <option value="3" data-class="speedmoto">Гоночний мотоцикл (150$ в день)
+                </option>
+                <option value="4" data-class="konceptmoto">Концептуальний мотоцикл (340$ в день)
+                </option>
+              </select>
+              <br>
+              <h3>Кількість товару:</h3>
+              <div id="slider">
+                <div id="custom-handle" class="ui-slider-handle"></div>
+              </div>
+              <br>
+              <div class="demo">
+                <p>
+                  <label for="amount">Скільки плануєте проїхати? Відстань:</label>
+                  <input type="text" id="amount" style="border:0; color:#000000; background-color:
+										#E7E7F0;" />
+                </p>
+                <div id="slider-range"></div>
+              </div>
+              <div class="ui-widget" style="margin-bottom: 10px;">
+                <label for="region">Виберіть область: </label>
+                <input id="region">
+              </div>
+
+              <strong>Від: </strong>
+              <input type="text" name="form" id="from", class="datepicker" size="12">
+              <strong>До:</strong>
+              <input type="text" name="to" id="to", class="datepicker" size="12">
+              <p><strong>Ваші побажання:</strong></p>
+              <textarea cols="45" rows="2" id="textarea"></textarea>
+            </div>
+          </fieldset>
+        </div>
+      </form>
+    </div>
+    <!-- end-form -->
+  </div>
+</div>
+
+<!-- ------------- Modal ---------------->
+<div id="dialog" title="Ваше замовлення">
+  <p>Ваше замовлення відправлено на оброблення. Очікуйте підтвердження</p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Theme 14</title>
+    <link rel="stylesheet" href="../test/css/bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="../JQuery/css/theme-style.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css" type="text/css" />
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js" type="application/javascript"></script>
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <div class="features-grids text-center ui-helper-reset ui-helper-clearfix">
+        <br>
+        <div class="col-md-3 features-grid ui-widget-content ui-corner-tr" id="draggable1" class="ui-widget-content">
+            <img title="" nomer="1" price="100000" class="head-moto-img" id="img_1" src="images/moto1.jpg"
+                alt="Мотоцикл 1" />
+            <h3><a href="#">Харлей<br> Девідсон</a></h3>
+        </div>
+        <div class="col-md-3 features-grid ui-widget-content ui-corner-tr" id="draggable2" class="ui-widget-content">
+            <img title="" nomer="2" price="200000" class="head-moto-img" id="img_2" src="images/moto2.jpg"
+                alt="Мотоцикл 2" />
+            <h3><a href="#">Кросовий мотоцикл</a></h3>
+        </div>
+        <div class="col-md-3 features-grid ui-widget-content ui-corner-tr" id="draggable3" class="ui-widget-content">
+            <img title="" nomer="3" price="300000" class="head-moto-img" id="img_3" src="images/moto3.jpg"
+                alt="Мотоцикл 3" />
+            <h3><a href="#">Гоночний мотоцикл</a></h3>
+        </div>
+        <div class="col-md-3 features-grid ui-widget-content ui-corner-tr" id="draggable4" class="ui-widget-content">
+            <img title="" nomer="4" price="400000" class="head-moto-img" id="img_4" src="images/moto4.jpg"
+                alt="Мотоцикл 4" />
+            <h3><a href="#">Концептуальний мотоцикл</a></h3>
+        </div>
+    </div>
+    <div id="koshik">
+        <div class="head text-center">
+            <h3><span> </span> Кошик</h3>
+            <p id="suma"></p>
+        </div>
+        <div class="koshik-wrapper ui-widget-content ui-state-default">
+
+        </div>
+        <div id="myclear" style="display: none;">Мотоциклів у вашому кошику: <span
+                id="helmetsCount"><strong></strong></span>. Всього сума: <span id="helmetsSumm"><strong></strong></span>
+            доларів.
+        </div>
+    </div>
+    <div>
+        <div class="container">
+            <div class="row">
+                <div class="head text-center">
+                    <h3><span> </span> Додаткові опції</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <h4>Відсортуйте характеристики за важливістю:</h4>
+                    <ul id="sortable">
+                        <li class="ui-state-default">Економічність</li>
+                        <li class="ui-state-default">Максимальна швидкість</li>
+                        <li class="ui-state-default">Можливість їхати вдвох</li>
+                        <li class="ui-state-default">Престиж моделі</li>
+                        <li class="ui-state-default">Сучасність моделі</li>
+                        <li class="ui-state-default">Великий обсяг багажу</li>
+                        <li class="ui-state-default">Комфортна їзда</li>
+                        <li class="ui-state-default">Низька вартість прокату</li>
+                    </ul>
+                </div>
+                <div class="col-lg-6">
+                    <h4>Виберіть кращий колір(и) мотоцикла:</h4>
+                    <ol id="selectable">
+                        <li class="ui-state-default"><img src="images/red.jpg" width="220" height="148" alt="" />
+                        </li>
+                        <li class="ui-state-default"><img src="images/green.jpg" width="220" height="148"
+                                alt="" /></li>
+                        <li class="ui-state-default"><img src="images/blue.jpg" width="220" height="148" alt="" />
+                        </li>
+                        <li class="ui-state-default"><img src="images/black.jpg" width="220" height="148"
+                                alt="" /></li>
+                    </ol>
+                    <button style="width: 85%; margin-top: 5px;" id="clear">Очистити</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

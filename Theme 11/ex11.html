@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise 1</title>
+    <link rel="stylesheet" href="../test/css/theme-style.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css"/>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+</head>
+<body>
+<style>
+    .ui-selectmenu-menu .ui-menu.customicons .ui-menu-item-wrapper {
+        padding: 0.5em 0 0.5em 3em;
+    }
+
+    .ui-selectmenu-menu .ui-menu.customicons .ui-menu-item .ui-icon {
+        height: 24px;
+        width: 24px;
+        top: 0.1em;
+    }
+
+    .ui-icon.harley {
+        background-image: url("img/moto4.jpg") !important;
+        background-size: 24px 24px;
+    }
+
+    .ui-icon.crossmoto {
+        background-image: url("img/moto2.jpg") !important;
+        background-size: 24px 24px;
+    }
+
+    .ui-icon.speedmoto {
+        background-image: url("img/moto3.jpg") !important;
+        background-size: 24px 24px;
+    }
+
+    .ui-icon.konceptmoto {
+        background-image: url("img/moto1.jpg") !important;
+        background-size: 24px 24px;
+    }
+
+    #motoSelect-button:nth-child(4) {
+        display: none;
+        padding: 100px;
+    }
+
+    #shlem1 fieldset {
+        border: 0;
+        background-color: #fff;
+    }
+    #shlem1 label {
+        display: block;
+        margin: 20px 0 0 0;
+    }
+    #shlem1 #circle {
+        float: left;
+        background: yellow;
+        border-radius: 50%;
+        width: 212px;
+        height: 212px;
+        margin-top: 15px;
+    }
+</style>
+<script>
+
+
+    $(document).ready(()=>{
+        $( "input[type=submit]" ).button();
+    })
+    /////////////////////////////////////////
+
+    $(document).ready(()=>{
+        $( "#clear_form" ).button();
+        $( "#clear_form" ).click((e) => {
+            $('body input[type=radio], body input[type=checkbox]').prop('checked', false);
+            $('input[type=text], textarea').val('');
+        })
+    })
+    /////////////////////////////////////////
+
+
+    $(document).ready(()=>{
+        $( "input[type=radio], input[type=checkbox]" ).checkboxradio({});
+    })
+    /////////////////////////////////////////
+
+
+    $(document).ready(()=>{
+        $( "select" ).selectmenu()
+    })
+    /////////////////////////////////////////
+
+
+    $(document).ready(()=>{
+        $.widget( "custom.iconselectmenu", $.ui.selectmenu, {
+            _renderItem: function( ul, item ) {
+                var li = $( "<li>" ),
+                    wrapper = $( "<div>", { text: item.label } );
+                if ( item.disabled ) {
+                    li.addClass( "ui-state-disabled" );
+                }
+                $( "<span>", {
+                    style: item.element.attr( "data-style" ),
+                    "class": "ui-icon " + item.element.attr( "data-class" )
+                })
+                    .appendTo( wrapper );
+                return li.append( wrapper ).appendTo( ul );
+            }
+        });
+        $( "#motoSelect" )
+            .iconselectmenu()
+            .iconselectmenu( "menuWidget" )
+            .addClass( "ui-menu-icons customicons" );
+    })
+    /////////////////////////////////////////
+
+
+    $(document).ready(()=>{
+        const array = [100, 200, 300, 400]
+        $( "select" ).selectmenu();
+        $('select[name=color]').on('selectmenuchange', function(value) {
+            $('#circle-image').attr('src', `./img/${$('select[name=color]').val()}-circle.png`)
+        });
+        $('select[name=size]').on('selectmenuchange', function(value) {
+            $('#circle-image').width(array[$('select[name=size]').val()]).height(array[$('select[name=size]').val()]);
+        });
+    })
+    /////////////////////////////////////////
+
+
+
+</script>
+
+<div id="shlem1">
+    <div class="container">
+        <div class="row">
+            <form action="#">
+                <div class="col-md-6">
+                    <!-- -->
+                </div>
+                <div class="col-md-6">
+                    <fieldset>
+                        <!-- -->
+                    </fieldset>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="col-md-12">
+    <form id="my_form">
+        <div id="bigform">
+            <fieldset>
+                <!-- right-form -->
+                <div id="div_form_1">
+                    <fieldset id="innerfieldset">
+                        <legend>Додаткові опції</legend>
+                        <p><strong>Чи потрібні аксесуари?</strong></p>
+                        <div id="format">
+                            <input type="checkbox" value="sh" name="dop_oprions" id="shlem"/>
+                            <label for="shlem">Шолом</label>
+                            <input type="checkbox" value="bag" name="dop_oprions" id="bag"/>
+                            <label for="bag">Багажник</label>
+                            <input type="checkbox" value="od" name="dop_oprions" id="od"/>
+                            <label for="od">Мото-одяг</label>
+                        </div>
+                        <br>
+                        <p><strong>Чи потрібна страховка?</strong></p>
+                        <div id="radio">
+                            <input type="radio" id="inch_yes" value="yes" name="inch"/>
+                            <label for="inch_yes">Так</label>
+                            <input type="radio" id="inch_no" value="no" name="inch"/>
+                            <label for="inch_no">Ні</label>
+                        </div>
+                    </fieldset>
+                    <input type="submit" value="Відправити запит" id="my_button"/>
+                    <a id="clear_form">Очистити форму</a>
+                </div>
+                <!-- left-form -->
+                <div id="div_form_2">
+                    <span>Модель:</span>
+                    <select name="moto" size="1" id="motoSelect">
+                        <option value="1" data-class="harley">Харлей Девідсон (100$ в день)</option>
+                        <option value="2" data-class="crossmoto">Кросовий мотоцикл (40$ в день)</option>
+                        <option value="3" data-class="speedmoto">Гоночний мотоцикл (150$ в день)</option>
+                        <option value="4" data-class="konceptmoto">Концептуальний мотоцикл (340$ в день)</option>
+                    </select>
+                    <span>Днів:</span>
+                    <select name="days" size="1" id="daysSelect">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                    </select>
+                    <br><br>
+                    <p><strong>Ваші побажання:</strong></p>
+                    <textarea cols="45" rows="2" id="mytextarea"></textarea>
+                </div>
+            </fieldset>
+        </div>
+    </form>
+</div>
+<div id="shlem">
+    <div class="container">
+        <div class="row">
+            <form action="#">
+                <div class="col-md-6">
+                    <img id='circle-image' width="100px" height="100px" class="center"
+                         src="./img/green-circle.png">
+                </div>
+                <div class="col-md-6">
+                    <fieldset>
+                        <label for="size">Select a size:</label>
+                        <select name="size" size="1" id="size">
+                            <option value="0">xs</option>
+                            <option value="1">s</option>
+                            <option value="2">m</option>
+                            <option value="3">l</option>
+                        </select>
+                        <label for="size">Select a color:</label>
+                        <select name="color" size="1" id="size">
+                            <option value="green">green</option>
+                            <option value="red">red</option>
+                        </select>
+                    </fieldset>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script>
+    $("#clear_form").button();
+    $("#clear_form").click(function (event) {
+        $('#div_form_1 input[type=checkbox]').prop('checked', false);
+        $("#div_form_1 input[type=radio]").prop('checked', false);
+        $("input[type=text], textarea").val("");
+    });
+</script>
+</body>
+</html>
